@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: common_cause_development
+
+
+test:
+  <<: *default
+  database: common_cause_test
+
+production:
+  <<: *default
+  database: common_cause_production
+  username: common_cause
+  password: <%= ENV['COMMON_CAUSE_DATABASE_PASSWORD'] %>
+
