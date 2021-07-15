@@ -19,5 +19,5 @@ production:
   <<: *default
   database: common_cause_production
   username: common_cause
-  password: <%= ENV['COMMON_CAUSE_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials[:production_database_password] %>
 

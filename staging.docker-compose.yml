@@ -4,8 +4,8 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
+    env_file:
+      - /common_cause_config/db.env
 
   # Staging configuration: run rails in production, but still build the web service Dockerfile and still mount the checked out source code.
   # TODO: a proper production setup would specify an image instead

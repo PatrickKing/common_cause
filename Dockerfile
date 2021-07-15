@@ -3,7 +3,10 @@
 # Adapted from: https://docs.docker.com/samples/rails/
 
 FROM ruby:3.0.2
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client npm
+# Unclear why, but the sticky bit is not set on /tmp, and this causes a problem installing certain apt packages (in this case nano)
+# See https://stackoverflow.com/questions/53950082/docker-images-lacking-tmp
+RUN chmod 1777 /tmp
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client npm nano
 RUN npm i -g yarn
 WORKDIR /common_cause
 COPY Gemfile /common_cause/Gemfile
