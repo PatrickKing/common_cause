@@ -1,3 +1,12 @@
+# Common Cause
+
+## Docker
+
+`docker-compose up --build` - Partial rebuild, for dockerfile changes only
+`docker-compose run web bundle install` - Full rebuild, for updated gems
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
