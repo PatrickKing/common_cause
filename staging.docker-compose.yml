@@ -3,7 +3,7 @@ services:
   db:
     image: postgres
     volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+      - /postgres_data:/var/lib/postgresql/data
     env_file:
       - /common_cause_config/db.env
 
