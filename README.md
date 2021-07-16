@@ -28,6 +28,8 @@
 
 `docker-compose run web bundle install` - Full rebuild, for updated gems
 
+After a build (?) docker will have transferred ownership of all the files in the app directory to root. To edit and use git on your host, it's convenient to take the ownership back:
+  `sudo chown -R <your-username>:<your-username> .`
 
 
 # README

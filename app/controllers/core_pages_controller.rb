@@ -4,5 +4,9 @@ class CorePagesController < ApplicationController
     
   end
 
+  def temp_page
+    
+  end
+
 
 end

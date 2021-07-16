@@ -1,7 +1,8 @@
 doctype html
 
-html
+html lang = "en"
   head
+    meta charset = "UTF-8"
     title Common Cause
     meta name = "viewport" content = "width=device-width,initial-scale=1"
     = csrf_meta_tags
@@ -10,4 +11,43 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    a.skip-link.screen-reader-text href = "#primary"
+      | Skip to content
+
+    header.header
+      .container
+        .row.justify-content-between.align-items-center
+
+          / TODO: header logo goes here
+
+          .col-auto
+            nav#site-navigation.main-navigation.header-nav
+              button.menu-toggle.main-menu-button aria-controls = "main-menu" aria-expanded = "false"
+              / TODO: standard + hamburger button menu goes here 
+
     = yield
+
+    footer.footer
+      .container
+        .row.justify-content-between.align-items-end
+          
+          nav.col-12.col-sm-auto
+            .d-flex.justify-content-start.bottom-nav-menu
+              = render 'partials/footer_menu'
+
+          .col-12.col-sm-auto
+            div
+              .d-flex.justify-content-end
+                / TODO: pull link data from site singleton record
+                a href='https://www.instagram.com/'
+                  = image_tag 'instagram.png', class: 'social-image', alt: 'Instagram'
+
+                a href='https://twitter.com/'
+                  = image_tag 'twitter.png', class: 'social-image', alt: 'Twitter'
+
+                a href='https://www.facebook.com/'
+                  = image_tag 'facebook.png', class: 'social-image', alt: 'Facebook'
+
+              p.copyright-notice
+                / TODO: pull the authors from site singleton
+                | © #{Time.new.year} the Authors

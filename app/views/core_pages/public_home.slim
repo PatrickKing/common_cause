@@ -1,1 +1,69 @@
-p hello world
+
+main id="primary" class="site-main"
+
+  .container.content
+
+    = render 'partials/hero_episode'
+
+    h2.recent-episodes-heading.h4
+      | Recent Podcast Episodes
+
+    .row.justify-content-between
+      = render 'partials/episode_box'
+      = render 'partials/episode_box'
+      = render 'partials/episode_box'
+
+    .row.icons-container.justify-content-between
+
+      = render partial: 'partials/image_link_box', locals: { \
+        image: 'people.png', \
+        alt_text: 'About', \
+        link_heading_text: 'Who We Are', \
+        link_copy_text: 'TODO: copy text' \
+        }
+
+      = render partial: 'partials/image_link_box', locals: { \
+        image: 'paper.png', \
+        alt_text: 'Read', \
+        link_heading_text: 'News Updates', \
+        link_copy_text: 'TODO: copy text' \
+        }
+
+      = render partial: 'partials/image_link_box', locals: { \
+        image: 'people.png', \
+        alt_text: 'Learn', \
+        link_heading_text: 'Printables', \
+        link_copy_text: 'TODO: copy text' \
+        }
+
+    .row.appeal-container
+      .col
+        h2.appeal-heading.titleh1
+          | TODO: appeal heading
+        .appeal-copy
+          p
+            | TODO: appeal copy
+          p
+            | TODO: appeal copy
+
+        p.titleh5
+          a.appeal-donate-link href = '#'
+            | Donate Now »
+
+  .outer-email-bar
+    .container.inner-email-bar
+      .row.justify-content-center.align-items-center
+        .col-12.col-md-auto
+          span.titleh5
+            | Join our mailing list
+
+        .col-12.col-md-auto
+          input type='text' placeholder='Name'
+
+        .col-12.col-md-auto
+          input type='email' placeholder='Email'
+
+        .col-12.col-md-auto
+          span.titleh5
+            a href="#"
+              | Submit

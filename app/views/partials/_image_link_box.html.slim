@@ -1,0 +1,10 @@
+/ Four locals are expected to be passed: image, alt_text, link_heading_text, link_copy_text
+/ TODO: eventually we will just use an activemodel object here
+
+.col-md-3
+  a href = '#'
+    = image_tag image, class: 'full-width', alt: alt_text
+    h2.icon-heading
+      = link_heading_text
+    p.icon-copy
+      = link_copy_text

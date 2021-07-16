@@ -1,0 +1,299 @@
+
+/* Page Setup */
+
+// @font-face {
+//   font-family: "Futura";
+//   src: url("futura/FuturaPTMedium.otf");
+// }
+
+* {
+  box-sizing: border-box;
+  // font-family: "Futura", "sans-serif";
+}
+
+html {
+  /* rem of 18px, vertical unit of 27px */
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header, .outer-email-bar, .footer {
+  background-color: #242424;
+  color: white;
+}
+
+.header a, .outer-email-bar a, .footer a {
+  color: white;
+}
+
+/* Typography */
+/*
+NB: all of the below are designed for a repeating vertical unit of 27px / 1.5rem, to establish a strongly defined of vertical flow.
+For one line of text:
+h1 has a total vertical height of 3 units (81px)
+h2-h6 and p have a vertical height of 2 units (54px)
+span has a vertical height of 1 unit (27px)
+(that's 18px from the rem, and 9px from the base line height of 1.5).
+*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.titleh1, .titleh2, .titleh3, .titleh4, .titleh5, .titleh6 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  display: block;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+  line-height: 1.6;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+  line-height: 1.428571;
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+  line-height: 1.666667;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+  line-height: 2.5;
+}
+
+/* Designed to wrap and maintain the vertical 27px unit */
+.titleh1, .titleh2, .titleh3, .titleh4, .titleh5, .titleh6 {
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+.titleh1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.titleh2 {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.titleh3 {
+  font-size: 1.75rem;
+  line-height: 1.714286;
+}
+
+.titleh4 {
+  font-size: 1.35rem;
+  line-height: 1.111111;
+}
+
+.titleh5 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.titleh6 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+p, .p {
+  margin: 0;
+  padding: 0.75rem 0 0.75rem 0;
+  display: block;
+}
+
+/* Generic Helpers */
+.full-width {
+  width: 100%;
+}
+
+/* Header */
+/* sm- */
+.header {
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+/* md+ */
+@media (min-width: 768px) {
+  .header {
+    padding: 1.5rem 0 1.5rem 0;
+    background-image: url("img/header_starburst.png");
+    background-size: 1116px 123px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+}
+/* sm- */
+.header-logo {
+  /* The logo has space to be larger, but the file is 181px wide */
+  width: 181px;
+}
+
+/* md+ */
+@media (min-width: 768px) {
+  .header-logo {
+    width: auto;
+    height: 3rem;
+  }
+}
+.header-nav ul {
+  margin: 0;
+  padding: 0.75rem 0 0.75rem 0;
+}
+
+.header-nav li {
+  list-style: none;
+  text-transform: uppercase;
+  display: inline;
+  margin-left: 10px;
+}
+
+.main-menu-button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.content {
+  background-color: white;
+  padding-top: 1.5rem;
+}
+
+/* Headline */
+.headline-copy {
+  text-align: center;
+  padding: 0 10% 0 10%;
+}
+
+.headline-header {
+  font-style: italic;
+}
+
+.headline-date {
+  text-transform: uppercase;
+}
+
+.headline-listen-link {
+  text-transform: uppercase;
+}
+
+/* Recent Episodes */
+.recent-episodes-heading {
+  text-align: center;
+  margin: 3rem 0 3rem 0;
+}
+
+.episode-copy {
+  padding-bottom: 1.5rem;
+}
+
+.episode-date {
+  text-transform: uppercase;
+}
+
+/* Icons */
+.icons-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.icon-heading {
+  text-align: center;
+}
+
+.icon-copy {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* Appeal */
+.appeal-container {
+  padding-top: 3rem;
+  text-align: center;
+  background-image: url("img/wheat.jpg");
+  background-size: 1200px 600px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+.appeal-heading {
+  font-style: italic;
+}
+
+.appeal-copy {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+.appeal-donate-link {
+  text-transform: uppercase;
+}
+
+/* Email Bar */
+.outer-email-bar {
+  background-color: #917e58;
+}
+
+.inner-email-bar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.inner-email-bar span {
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+}
+.inner-email-bar input {
+  width: 100%;
+  max-width: 160px;
+  padding: 0;
+  /* Adapted from .titleh5 */
+  font-size: 1.2rem;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 0.75rem 0 0.75rem 0;
+  display: block;
+}
+
+/* Footer */
+.bottom-nav-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem 0.75rem 0;
+}
+
+.social-image {
+  height: 1.5rem;
+  margin-left: 0.75rem;
+}
+
+.copyright-notice {
+  text-align: right;
+}

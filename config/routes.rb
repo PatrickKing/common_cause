@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'core_pages#public_home'
 
+  get '/temp_page', to: 'core_pages#temp_page'
 
   get '/admin', to: 'admin_pages#admin_home'
 
