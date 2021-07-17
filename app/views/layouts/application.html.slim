@@ -21,14 +21,34 @@ html lang = "en"
           .col-auto
             a href = '/'
               / Set the header logo image with a background image set in lib/theme.css
-              .header-logo 
-
-
+              .header-logo
 
           .col-auto
-            nav#site-navigation.main-navigation.header-nav
+            / nav#site-navigation.main-navigation.header-nav
               button.menu-toggle.main-menu-button aria-controls = "main-menu" aria-expanded = "false"
-              / TODO: standard + hamburger button menu goes here 
+
+            / nav.header-nav.d-none.d-md-block
+            nav#site-navigation.main-navigation.header-nav
+              ul
+                li
+                  a href = "#"
+                  | About
+                li
+                  a href = "#"
+                  | Listen
+                li
+                  a href = "#"
+                  | Read
+                li
+                  a href = "#"
+                  | Learn
+                li
+                  a href = "#"
+                  | Support
+                li
+                  a href = "#"
+                  | Contact
+            = image_tag 'hamburger.png', class: 'd-md-none'
 
     = yield
 

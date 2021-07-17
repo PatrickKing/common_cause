@@ -27,6 +27,15 @@ a {
   color: black;
 }
 
+.screen-reader-text {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .header, .outer-email-bar, .footer {
   background-color: #242424;
   color: white;

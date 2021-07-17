@@ -34,3 +34,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# For theme specific styles and images: set up a git repo in lib.
+/lib
