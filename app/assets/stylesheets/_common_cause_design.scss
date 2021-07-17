@@ -136,21 +136,6 @@ p, .p {
   padding: 0.75rem 0 0.75rem 0;
 }
 
-/* md+ */
-@media (min-width: 768px) {
-  .header {
-    padding: 1.5rem 0 1.5rem 0;
-    background-image: url("img/header_starburst.png");
-    background-size: 1116px 123px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-  }
-}
-/* sm- */
-.header-logo {
-  /* The logo has space to be larger, but the file is 181px wide */
-  width: 181px;
-}
 
 /* md+ */
 @media (min-width: 768px) {
@@ -236,10 +221,6 @@ p, .p {
 .appeal-container {
   padding-top: 3rem;
   text-align: center;
-  background-image: url("img/wheat.jpg");
-  background-size: 1200px 600px;
-  background-position: bottom;
-  background-repeat: no-repeat;
   min-height: 600px;
 }
 
