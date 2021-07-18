@@ -1,0 +1,10 @@
+.container
+
+  .row
+    .col-sm-2
+      = render partial: 'partials/admin_menu', locals: {menu_items: @menu_items}
+    .col-sm-2
+      = render partial: 'partials/admin_menu', locals: {menu_items: @submenu_items}
+    .col-sm-8
+      p TODO: enable twitter feed checkbox, twitter handle, API key if needed
+

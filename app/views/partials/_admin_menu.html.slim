@@ -1,0 +1,25 @@
+/ Expected local variable: menu_items
+
+.row
+  .col-12.px-0
+    ul.list-group
+
+      - menu_items.each do |item|
+
+        / We use the absence of a path attribute to determine if this menu item is a title.
+        / TODO: might be better to be more explicit
+        - if item[:path].nil?
+          li.list-group-item
+            span
+              strong = item[:label]
+
+        - else
+
+          - if item[:selected]
+            li.list-group-item.selected_admin_menu_item
+              = "#{item[:label]} ›"
+
+          - else
+            li.list-group-item
+              a.stretched-link href = "#{item[:path]}"
+                = item[:label]

@@ -2,7 +2,7 @@ doctype html
 
 html
   head
-    title Common Cause
+    title #{action_name.titleize} — Common Cause
     meta name = "viewport" content = "width=device-width,initial-scale=1"
     = csrf_meta_tags
     = csp_meta_tag
@@ -10,4 +10,5 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = yield
+    #admin-root
+      = yield
