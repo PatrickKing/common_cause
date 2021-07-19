@@ -1,22 +1,28 @@
-class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+class UsersController < AdminController
 
   # GET /users or /users.json
   def index
+    @menu_items = admin_menu
     @users = User.all
   end
 
   # GET /users/1 or /users/1.json
   def show
+    @menu_items = admin_menu
+    set_user
   end
 
   # GET /users/new
   def new
+    @menu_items = admin_menu
     @user = User.new
+    @user.set_init_values
   end
 
   # GET /users/1/edit
   def edit
+    @menu_items = admin_menu
+    set_user
   end
 
   # POST /users or /users.json
@@ -36,6 +42,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    set_user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -49,6 +56,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    set_user
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }

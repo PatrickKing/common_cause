@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -8,6 +7,10 @@ Rails.application.routes.draw do
   get '/temp_page', to: 'core_pages#temp_page'
 
   get '/admin', to: 'admin_pages#admin_home'
+
+  scope 'admin' do
+    resources :users
+  end
 
   scope 'admin', as: :admin do
     get 'posts', to: 'admin_pages#posts'
