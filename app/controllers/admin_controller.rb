@@ -6,9 +6,17 @@ class AdminController < ApplicationController
 
   # Helpers
 
+  def permit_roles(roles = [])
+
+    unless roles.include? current_user.role
+      redirect_to :admin, alert: "You aren't authorized to view that page."
+    end
+
+  end
+
   def admin_menu(selected = nil)
 
-    [
+    menu_items = [
       {
         label: 'Author Tools'
       },
@@ -26,26 +34,33 @@ class AdminController < ApplicationController
         label: 'Tags',
         path: admin_tags_path,
         selected: selected == 'Tags',
-      },
-      {
-        label: 'Admin Tools'
-      },
-      {
-        label: 'Settings',
-        path: admin_settings_path,
-        selected: selected == 'Settings',
-      },
-      {
-        label: 'Users',
-        path: admin_users_path,
-        selected: selected == 'Users',
-      },
-      {
-        label: 'Menu Items',
-        path: admin_menu_items_path,
-        selected: selected == 'Menu Items',
-      },
+      }
     ]
+
+    if current_user.role == 'admin'
+      menu_items += [
+        {
+          label: 'Admin Tools'
+        },
+        {
+          label: 'Settings',
+          path: admin_settings_path,
+          selected: selected == 'Settings',
+        },
+        {
+          label: 'Users',
+          path: admin_users_path,
+          selected: selected == 'Users',
+        },
+        {
+          label: 'Menu Items',
+          path: admin_menu_items_path,
+          selected: selected == 'Menu Items',
+        },
+      ]
+    end
+
+    menu_items
 
   end
 

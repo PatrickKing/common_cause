@@ -13,6 +13,23 @@ html
     #admin-root
       .container
         .row
+          .col-sm
+            h1
+              | Common Cause Admin
+          .col-sm              
+            ul.admin-user-links.p-0
+              li.text-sm-end.h4 = "Hello #{current_user.name}"
+              li.text-sm-end
+                a href= '/'
+                  | Back to Common Cause
+              li.text-sm-end
+                a href= '#'
+                  | Account Settings
+              li.text-sm-end
+                a href= '#'
+                  | Logout
+
+        .row
 
           - if defined? @menu_items
             .col-sm-2
@@ -23,4 +40,6 @@ html
               = render partial: 'partials/admin_menu', locals: {menu_items: @submenu_items}
 
           .col
+            = render 'partials/flash'
+  
             = yield

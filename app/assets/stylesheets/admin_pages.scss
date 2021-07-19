@@ -14,4 +14,18 @@
   .selected_admin_menu_item {
     background-color: #eee;
   }
+
+  .flash-row {
+    color: white;
+  }
+
+  .admin-user-links {
+    list-style: none;
+    a {
+      color: darkblue;
+    }
+    a:hover {
+      color: orange;
+    }
+  }
 }

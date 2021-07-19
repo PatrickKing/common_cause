@@ -2,18 +2,24 @@ class UsersController < AdminController
 
   # GET /users or /users.json
   def index
+    authenticate_user!
+    permit_roles ['admin']
     @menu_items = admin_menu
     @users = User.all
   end
 
   # GET /users/1 or /users/1.json
   def show
+    authenticate_user!
+    permit_roles ['admin']
     @menu_items = admin_menu
     set_user
   end
 
   # GET /users/new
   def new
+    authenticate_user!
+    permit_roles ['admin']
     @menu_items = admin_menu
     @user = User.new
     @user.set_init_values
@@ -21,12 +27,16 @@ class UsersController < AdminController
 
   # GET /users/1/edit
   def edit
+    authenticate_user!
+    permit_roles ['admin']
     @menu_items = admin_menu
     set_user
   end
 
   # POST /users or /users.json
   def create
+    authenticate_user!
+    permit_roles ['admin']
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -42,6 +52,8 @@ class UsersController < AdminController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    authenticate_user!
+    permit_roles ['admin']
     set_user
     respond_to do |format|
       if @user.update(user_params)
@@ -56,6 +68,8 @@ class UsersController < AdminController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    authenticate_user!
+    permit_roles ['admin']
     set_user
     @user.destroy
     respond_to do |format|
